@@ -7,9 +7,9 @@ print "Quantos refrigerantes foram consumidos: ";
 $qr = trim ( fgets ( STDIN ) ); // qr = quantidade de refrigerante
 print "Quantos espetinhos foram consumidos: ";
 $qe = trim ( fgets ( STDIN ) ); // qe = quantidade de espetinho
-if ($s = 'h') {
+if ($s == 'h') {
 	$b = 5;
-} elseif ($s = 'f') {
+} elseif ($s == 'f') {
 	$b = 8;
 }
 $vc = (5 / 2); // valor cerveja
@@ -29,15 +29,17 @@ $bc = ($bc1 + $bc2 + $bc3);
 print "\nR$ " . number_format ( $bc, 2, ',', '.' ) . " (valor bebida e comida)";
 
 if (($b + $bc) <= 15) {
-	print "\nR$ " . number_format ( $vcant, 2, ',', '.' ) . "(valor cantores)";
-	$vcant = 3;
+	$xcant = $vcant;
+	print "\nR$ " . number_format ( $xcant, 2, ',', '.' ) . "(valor cantores)";
 } else {
-	print "\nR$ " . number_format ( $vcant, 2, ',', '.' ) . "(valor cantores)";
-	$vcant = 0;
+	$xcant = $fcant;
+	print "\nR$ " . number_format ( $xcant, 2, ',', '.' ) . "(valor cantores)";
 }
+$subt = ($b + $bc + $xcant);
+print "\nR$ " . number_format ( $subt, 2, ',', '.' ) . "(subtotal sem 10%)";
 
 print "\n--------------------------------------------------------------";
-print "\nR$ " . number_format ( $tot, 2, ',', '.' ) . "(total)";
 $tot = ($subt + ($subt / 10));
+print "\nR$ " . number_format ( $tot, 2, ',', '.' ) . "(total)";
 
 ?>	
