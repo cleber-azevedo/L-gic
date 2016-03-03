@@ -1,5 +1,5 @@
 <?php
-print "Qual o sexo do cliente: ";
+print "Qual o sexo do cliente (m/f): ";
 $s = trim ( fgets ( STDIN ) ); // s = sexo do cliente
 print "Quantas cervejas foram consumidas: ";
 $qc = trim ( fgets ( STDIN ) ); // qc = quantidade de cerveja
@@ -7,11 +7,14 @@ print "Quantos refrigerantes foram consumidos: ";
 $qr = trim ( fgets ( STDIN ) ); // qr = quantidade de refrigerante
 print "Quantos espetinhos foram consumidos: ";
 $qe = trim ( fgets ( STDIN ) ); // qe = quantidade de espetinho
-if ($s == 'h') {
+if ($s = 'm' && $s = 'M') {
 	$b = 5;
-} elseif ($s == 'f') {
+} elseif ($s = 'f' && $s = 'F') {
 	$b = 8;
 }
+	else {
+		print "\nFavor corrigir o sexo!";
+	}
 $vc = (5 / 2); // valor cerveja
 $vr = 2; // valor refrigerante
 $ve = 4;
@@ -22,7 +25,7 @@ $fcant = 0; // valor cantores
 print "\nValor da Conta:";
 print "\nR$ " . number_format ( $b, 2, ',', '.' ) . " (valor básico)";
 
-$bc1 = ($qc * $vc);
+$bc1 = ($qc * $vc); // bc = quantidade de cerveja x valor de cerveja
 $bc2 = ($qr * $vr);
 $bc3 = ($qe * $ve);
 $bc = ($bc1 + $bc2 + $bc3);
